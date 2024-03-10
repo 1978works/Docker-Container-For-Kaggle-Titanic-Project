@@ -5,11 +5,11 @@ WORKDIR /vsc_workspace
 # Titanic内のrequirements.txtを、コンテナ内部の作業ディレクトリ内（今回はvsc_workspace）にコピーする
 # COPY ① ②（①：手元のPC内のファイルのパス、②：コンテナ内部のディレクトリのパス）
 # ①について：Dockerfileは、Dockerfileのあるディレクトリがカレントディレクトリとして認識される
-#COPY requirements.txt /vsc_workspace
+COPY requirements.txt /vsc_workspace
 # pipそのものを最新にしておく
 RUN pip install --upgrade pip
 # コンテナ内の作業ディレクトリにあるrequirements.txtを使って必要なモジュールなどを一括インストール
-# RUN pip3 install -r requirements.txt
+RUN pip3 install -r requirements.txt
 
 
 # .devcontainerディレクトリ内部のファイルを全て、WORKDIRとして設定した/vsc_workspaceへコピー
