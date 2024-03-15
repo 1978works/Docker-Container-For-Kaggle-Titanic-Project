@@ -16,7 +16,7 @@ def get_csv(path: str) -> list[str]:
         list[str]:CSVファイルだけのファイル名のリスト
     """
     
-    
+        
     temp_result: list[str] = os.listdir(path)
     if temp_result == []:
         print("ファイルがありません")
