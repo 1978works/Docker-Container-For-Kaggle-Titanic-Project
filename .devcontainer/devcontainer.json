@@ -6,7 +6,7 @@
         // devcontainer.jsonとDockerfileは同じディクトリにあるので、今回はこのようなパス表記
         "dockerfile": "Dockerfile"
     },
-    // workspacespaceFolderの設定が必要。ホストPCの.devcontainerの1つ上のTitanicフォルダdatasetフォルダを、コンテナの/vsc_workspaceへバインドマウント
+    // workspacespaceFolderの設定が必要。ホストPCの.devcontainerの1つ上のTitanicフォルダdatasetフォルダを、コンテナの/vsc_workspaceへバインドマウント。このディレクトリ「workspace」が、カレントディレクトリとして設定される
     "workspaceMount": "source=${localWorkspaceFolder},target=/workspace,type=bind,consistency=cached",
     // workspaceMountの設定が必要
     "workspaceFolder": "/workspace",
@@ -23,7 +23,8 @@
                 "ms-azuretools.vscode-docker",
                 "eamodio.gitlens",
                 "mechatroner.rainbow-csv",
-                "njpwerner.autodocstring"
+                "njpwerner.autodocstring",
+                "ms-vscode.live-server"
             ]
         }
     }
