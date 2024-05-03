@@ -110,3 +110,21 @@ train_df[["Age", "Survived"]].dropna().sort_values("Age").corr('pearson')
 
 
 
+def column_name(x):
+    columns_array = x.columns.values
+    
+    if len(columns_array) == 0 :
+        print("No Column")
+    
+    else:
+        booleans: list = []
+        for i in columns_array:
+            if len(i) <= 5:
+                booleans.append(True)
+                
+            else:
+                booleans.append(False)
+            
+        return booleans
+
+train_df.iloc[0:10, column_name(train_df)]
